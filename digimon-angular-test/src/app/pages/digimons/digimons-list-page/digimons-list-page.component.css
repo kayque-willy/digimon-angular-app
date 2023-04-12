@@ -71,7 +71,9 @@ p {
     background-size: 100%;
     background-size: cover;
     display: flex;
-    margin: 60px auto 0px;
+    margin-top: 6.9%;
+    margin-left: -1%;
+    margin-right: -1%;
     padding: 0 16px;
     max-width: 1500px;
     min-height: 650px;
