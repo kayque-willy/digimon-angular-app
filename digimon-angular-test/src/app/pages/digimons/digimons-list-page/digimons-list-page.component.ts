@@ -10,6 +10,10 @@ import { MatTable } from '@angular/material/table';
 })
 export class DigimonsListPageComponent implements OnInit {
 
+  //Controle da exibição da lista
+  begin: number = 0;
+  end: number = 10;
+
   //Busca por nome
   name: string = "";
 
@@ -19,6 +23,7 @@ export class DigimonsListPageComponent implements OnInit {
   //Tabela de listagem
   displayedColumns: string[] = ['img', 'name', 'level'];
   dataSource: Digimon[] = [];
+  dataList: Digimon[] = [];
   @ViewChild(MatTable) table: MatTable<any> | undefined;
 
   constructor(
@@ -49,11 +54,21 @@ export class DigimonsListPageComponent implements OnInit {
     }
   }
 
+  getMoreResults() {
+    this.begin += 10;
+    this.end += 10;
+    const moreResults: Digimon[] = this.dataList.slice(this.begin, this.end);
+    this.dataSource.push(...moreResults);
+    this.table?.renderRows();
+  }
+
   async getAllDigimons() {
     try {
-      //O subscribe é usado pra recuperar o resultado da requisição
       this.digimonService.getAll().subscribe(dados => {
-        this.dataSource = dados as Digimon[];
+        this.dataList = dados as Digimon[];
+        this.begin = 0;
+        this.end = 10;
+        this.dataSource = this.dataList.slice(this.begin, this.end);
       });
       this.table?.renderRows();
     } catch (error) {
@@ -63,9 +78,11 @@ export class DigimonsListPageComponent implements OnInit {
 
   async getDigimonsbyLevel() {
     try {
-      //O subscribe é usado pra recuperar o resultado da requisição
       this.digimonService.getByLevel(this.selectLevel).subscribe(dados => {
-        this.dataSource = dados as Digimon[];
+        this.dataList = dados as Digimon[];
+        this.begin = 0;
+        this.end = 10;
+        this.dataSource = this.dataList.slice(this.begin, this.end);
       });
       this.table?.renderRows();
     } catch (error) {
@@ -79,10 +96,14 @@ export class DigimonsListPageComponent implements OnInit {
       if (this.name !== "") {
         this.digimonService.getByName(this.name).subscribe({
           next: (dados) => {
-            this.dataSource = dados;
+            this.dataList = dados as Digimon[];
+            this.begin = 0;
+            this.end = 10;
+            this.dataSource = this.dataList.slice(this.begin, this.end);
           },
           error: (err) => {
             console.log('Não foi possível encontrar o Digimon', err);
+            this.dataList = [];
             this.dataSource = [];
           }
         });

@@ -309,10 +309,15 @@ a:hover {
     border-radius: 51%;
 }
 
-.btn-search {
+.btn-search,
+.btn-load {
     font-size: 1.1em;
     font-weight: bold;
     color: white;
+}
+
+.btn-load {
+    margin-bottom: 15%;
 }
 
 .input-search {
@@ -322,6 +327,10 @@ a:hover {
 h3.level-title {
     margin-top: 12%;
     margin-bottom: -12%;
+    text-shadow: 1px 1px 1px #333;
+}
+
+h3.not-found {
     text-shadow: 1px 1px 1px #333;
 }
 

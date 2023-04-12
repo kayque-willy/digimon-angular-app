@@ -4,9 +4,11 @@
         <div class="tollbar-content">
             <img width="320" alt="Digimon Logo" src="../assets/logo.png" />
         </div>
+
         <h1>Teste Angular</h1>
         <h3>Bem vindo ao Digimundo!</h3>
         <br>
+
         <form (ngSubmit)="searchByName()" class="search-form">
             <mat-form-field class="mat-form-field">
                 <span matPrefix> </span>
@@ -20,7 +22,9 @@
 </header>
 
 <div class="content" role="main">
-    <h3 class="level-title">Ou busque por nível!</h3>
+
+    <h3 class="level-title">Ou procure por nível!</h3>
+
     <mat-button-toggle-group #group="matButtonToggleGroup" class="select-level" [value]="selectLevel"
         (change)="onLevelChange(group.value)">
         <mat-button-toggle value="" aria-label="Todos">
@@ -45,7 +49,11 @@
             <img width="60" alt="Mega" src="../assets/level 6.png" />
         </mat-button-toggle>
     </mat-button-toggle-group>
-    <h3 class="example-selected-value">{{group.value}}</h3>
+    <h3 class="level-title">{{group.value}}</h3>
+
+    <ng-container class="container" *ngIf="dataSource.length === 0">
+        <h3 class="not-found">Não foi encontrado nenhum digimon!</h3>
+    </ng-container>
 
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
         <!-- Img Column -->
@@ -67,10 +75,13 @@
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        <ng-container class="container" *ngIf="dataSource.length === 0">
-            <div class="page-title">Carregando digimons</div>
-        </ng-container>
     </table>
+
+    <br>
+
+    <form (ngSubmit)="getMoreResults()" class="search-form">
+        <button class="btn-load">Carregar mais digimons</button>
+    </form>
 
     <!-- Cards -->
     <!-- <div class="card-container">
@@ -431,20 +442,22 @@
     <!-- <footer> -->
     <!-- Love Angular?&nbsp; -->
     <!-- <a href="https://github.com/angular/angular" target="_blank" rel="noopener"> Give our repo a star.
-      <div class="github-star-badge">
-        <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-        </svg>
-        Star
-      </div>
-    </a> -->
-    <!-- <a href="https://github.com/angular/angular" target="_blank" rel="noopener">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#1976d2" />
-        <path d="M0 0h24v24H0z" fill="none" />
-      </svg>
-    </a> -->
+            <div class="github-star-badge">
+                <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24">
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <path
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>
+                Star
+            </div>
+        </a>
+        <a href="https://github.com/angular/angular" target="_blank" rel="noopener">
+            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#1976d2" />
+                <path d="M0 0h24v24H0z" fill="none" />
+            </svg>
+        </a> -->
     <!-- </footer> -->
 
 </div>
