@@ -2,27 +2,25 @@
 <header>
     <div class="overlay">
         <div class="tollbar-content">
-            <img width="250" alt="Digimon Logo" src="../assets/logo.png" />
+            <img width="320" alt="Digimon Logo" src="../assets/logo.png" />
         </div>
-        <h1>Digimon Angular Test</h1>
+        <h1>Angular Test</h1>
         <h3>Welcome to Digital World!</h3>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum quis, odio veniam itaque ullam debitis
-            qui
-            magnam consequatur ab. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab.</p>
         <br>
-        <form (ngSubmit)="searchByName()">
-            <mat-form-field class="example-full-width">
+        <form (ngSubmit)="searchByName()" class="search-form">
+            <mat-form-field class="mat-form-field">
                 <span matPrefix> </span>
-                <input type="search" matInput placeholder="Search" name="search" [(ngModel)]="name"
-                    (ngModelChange)="onModelChange($event)">
+                <input clss="input-search" type="search" matInput placeholder="Buscar Digimon pelo nome" name="search"
+                    [(ngModel)]="name" (ngModelChange)="onModelChange($event)">
             </mat-form-field>
             <br>
-            <button><mat-icon>Buscar</mat-icon></button>
+            <button class="btn-search">Buscar</button>
         </form>
     </div>
 </header>
 
 <div class="content" role="main">
+    <h3 class="level-title">Ou busque por nível!</h3>
     <mat-button-toggle-group #group="matButtonToggleGroup" class="select-level" [value]="selectLevel"
         (change)="onLevelChange(group.value)">
         <mat-button-toggle value="" aria-label="Todos">

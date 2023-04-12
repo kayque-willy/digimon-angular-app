@@ -13,8 +13,9 @@ header {
     background-attachment: fixed;
     position: relative;
     overflow: hidden;
-    border-radius: 0 0 85% 85% / 30%;
+    border-radius: 0 0 85% 85% / 23%;
 }
+
 header .overlay {
     width: 100%;
     height: 100%;
@@ -43,7 +44,7 @@ button {
     padding: 10px 20px;
     border-radius: 50px;
     color: #333;
-    background: #fff;
+    background: #0095ff;
     margin-bottom: 0;
     box-shadow: 0 3px 20px 0 #0000003b;
 }
@@ -115,9 +116,17 @@ p {
     opacity: 0.8;
 }
 
+.tollbar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: -2.5%;
+    margin-top: -2.5%;
+}
+
 .content {
     color: #000000;
-    background-image: url(https://images.withthewill.net/adventure1999-2001bdbox_cover1_january29_2021.jpg);
+    background-image: url("../../../../assets/bg.jpg");
     background-size: 100%;
     background-position: bottom;
     display: flex;
@@ -285,6 +294,35 @@ a:hover {
 
 .select-level {
     margin-top: 13%;
+}
+
+.mat-button-toggle-appearance-standard {
+    background: #cbcbcb73;
+}
+
+.mat-button-toggle-checked {
+    background-color: #e0e0e0 !important;
+}
+
+.mat-form-field {
+    width: 60%;
+    border-radius: 51%;
+}
+
+.btn-search {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: white;
+}
+
+.input-search {
+    text-align: center;
+}
+
+h3.level-title {
+    margin-top: 12%;
+    margin-bottom: -12%;
+    text-shadow: 1px 1px 1px #333;
 }
 
 /* Responsive Styles */
