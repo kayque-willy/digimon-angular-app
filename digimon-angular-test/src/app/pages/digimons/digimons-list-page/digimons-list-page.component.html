@@ -10,10 +10,11 @@
             qui
             magnam consequatur ab. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab.</p>
         <br>
-        <form (ngSubmit)="search()">
+        <form (ngSubmit)="searchByName()">
             <mat-form-field class="example-full-width">
                 <span matPrefix> </span>
-                <input type="search" matInput placeholder="Search" name="search" [(ngModel)]="name">
+                <input type="search" matInput placeholder="Search" name="search" [(ngModel)]="name"
+                    (ngModelChange)="onModelChange($event)">
             </mat-form-field>
             <br>
             <button><mat-icon>Buscar</mat-icon></button>
@@ -22,6 +23,32 @@
 </header>
 
 <div class="content" role="main">
+    <mat-button-toggle-group #group="matButtonToggleGroup" class="select-level" [value]="selectLevel"
+        (change)="onLevelChange(group.value)">
+        <mat-button-toggle value="" aria-label="Todos">
+            <img width="60" alt="Todos" src="../assets/fav.png" />
+        </mat-button-toggle>
+        <mat-button-toggle value="Fresh" aria-label="Fresh">
+            <img width="60" alt="Fresh" src="../assets/level 1.png" />
+        </mat-button-toggle>
+        <mat-button-toggle value="In Training" aria-label="In Training">
+            <img width="60" alt="In Training" src="../assets/level 2.png" />
+        </mat-button-toggle>
+        <mat-button-toggle value="Rookie" aria-label="Rookie">
+            <img width="60" alt="Rookie" src="../assets/level 3.png" />
+        </mat-button-toggle>
+        <mat-button-toggle value="Champion" aria-label="Champion">
+            <img width="60" alt="Champion" src="../assets/level 4.png" />
+        </mat-button-toggle>
+        <mat-button-toggle value="Ultimate" aria-label="Ultimate">
+            <img width="60" alt="Ultimate" src="../assets/level 5.png" />
+        </mat-button-toggle>
+        <mat-button-toggle value="Mega" aria-label="Mega">
+            <img width="60" alt="Mega" src="../assets/level 6.png" />
+        </mat-button-toggle>
+    </mat-button-toggle-group>
+    <h3 class="example-selected-value">{{group.value}}</h3>
+
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
         <!-- Img Column -->
         <ng-container matColumnDef="img">

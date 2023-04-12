@@ -29,7 +29,7 @@ export class DigimonService {
       .pipe(take(1));
   }
 
-  // Recupera todas as entidades pelo tipe
+  // Recupera todas as entidades pelo tipo
   // https://digimon-api.vercel.app/api/digimon/level/:level
   public getByLevel(level: string) {
     return this.httpClient
