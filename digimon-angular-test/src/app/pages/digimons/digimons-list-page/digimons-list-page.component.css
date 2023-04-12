@@ -27,7 +27,7 @@ header .overlay {
 
 h1 {
     font-family: "Dancing Script", cursive;
-    font-size: 80px;
+    font-size: 4em;
     margin-bottom: 30px;
 }
 
@@ -125,7 +125,7 @@ p {
     min-height: 650px;
     flex-direction: column;
     align-items: center;
-    margin-top: -6%;
+    margin-top: -11%;
 }
 
 svg.material-icons {
@@ -277,6 +277,10 @@ a:hover {
 .circle-link:hover {
     transform: translateY(-0.25rem);
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.table {
+    margin-top: 13%;
 }
 
 /* Responsive Styles */
