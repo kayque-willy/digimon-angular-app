@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { environment } from "src/environments/environment";
 import { take } from "rxjs";
+import { throwError } from 'rxjs';
+import { catchError, finalize } from 'rxjs/operators';
 import { Digimon } from 'src/app/models/digimon';
 
 
@@ -31,7 +33,7 @@ export class DigimonService {
   // https://digimon-api.vercel.app/api/digimon/level/:level
   public getByLevel(level: string) {
     return this.httpClient
-      .get<Digimon>(`${this.API}/${this.typeName}/level/${level}`)
+      .get<Digimon[]>(`${this.API}/${this.typeName}/level/${level}`)
       .pipe(take(1));
   }
 
@@ -39,7 +41,12 @@ export class DigimonService {
   // https://digimon-api.vercel.app/api/digimon/name/:name	
   public getByName(name: string) {
     return this.httpClient
-      .get<Digimon>(`${this.API}/${this.typeName}/name/${name}`)
-      .pipe(take(1));
+      .get<Digimon[]>(`${this.API}/${this.typeName}/name/${name}`)
+      .pipe(
+        take(1),
+        catchError(err => {
+          return throwError(() => err);
+        }),
+      );
   }
 }

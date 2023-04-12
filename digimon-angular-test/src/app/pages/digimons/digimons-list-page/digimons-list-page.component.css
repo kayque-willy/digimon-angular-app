@@ -18,7 +18,7 @@ header {
 header .overlay {
     width: 100%;
     height: 100%;
-    padding: 50px;
+    padding: 40px;
     color: #fff;
     text-shadow: 1px 1px 1px #333;
     /* background-image: linear-gradient(135deg, #9f05ff69 10%, #2108fd6b 100%); */

@@ -23,6 +23,10 @@ const DIGIMONS_DATA: Digimon[] = [
 })
 export class DigimonsListPageComponent implements OnInit {
 
+  //Busca por nome
+  name: string = "";
+
+  //Tabela de listagem
   displayedColumns: string[] = ['img', 'name', 'level'];
   dataSource: Digimon[] = [];
   @ViewChild(MatTable) table: MatTable<any> | undefined;
@@ -47,7 +51,29 @@ export class DigimonsListPageComponent implements OnInit {
       });
       this.table?.renderRows();
     } catch (error) {
-      // this.snackBar.open('Erro ao buscar todos os digimons.', 'x');
+      // this.snackBar.open('Erro ao buscar todos os Digimons.', 'x');
+    }
+  }
+
+  search() {
+    try {
+      //O subscribe é usado pra recuperar o resultado da requisição
+      if (this.name !== "") {
+        this.digimonService.getByName(this.name).subscribe({
+          next: (dados) => {
+            this.dataSource = dados;
+          },
+          error: (err) => {
+            console.log('Não foi possível encontrar o Digimon', err);
+            this.dataSource = [];
+          }
+        });
+        this.table?.renderRows();
+      } else {
+        this.getAllDigimons();
+      }
+    } catch (error) {
+      // this.snackBar.open('Erro ao buscar o Digimon pelo nome.', 'x');
     }
   }
 

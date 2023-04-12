@@ -1,16 +1,23 @@
 <!-- Content -->
 <header>
     <div class="overlay">
+        <div class="tollbar-content">
+            <img width="250" alt="Digimon Logo" src="../assets/logo.png" />
+        </div>
         <h1>Digimon Angular Test</h1>
         <h3>Welcome to Digital World!</h3>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum quis, odio veniam itaque ullam debitis
             qui
             magnam consequatur ab. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab.</p>
         <br>
-        <div class="tollbar-content">
-            <img width="175" alt="Digimon Logo" src="../assets/logo.png" />
-        </div>
-        <button>Buscar</button>
+        <form (ngSubmit)="search()">
+            <mat-form-field class="example-full-width">
+                <span matPrefix> </span>
+                <input type="search" matInput placeholder="Search" name="search" [(ngModel)]="name">
+            </mat-form-field>
+            <br>
+            <button><mat-icon>Buscar</mat-icon></button>
+        </form>
     </div>
 </header>
 
