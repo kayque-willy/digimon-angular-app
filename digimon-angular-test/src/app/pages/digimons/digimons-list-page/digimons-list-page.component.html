@@ -4,14 +4,14 @@
         <div class="tollbar-content">
             <img width="320" alt="Digimon Logo" src="../assets/logo.png" />
         </div>
-        <h1>Angular Test</h1>
-        <h3>Welcome to Digital World!</h3>
+        <h1>Teste Angular</h1>
+        <h3>Bem vindo ao Digimundo!</h3>
         <br>
         <form (ngSubmit)="searchByName()" class="search-form">
             <mat-form-field class="mat-form-field">
                 <span matPrefix> </span>
-                <input clss="input-search" type="search" matInput placeholder="Buscar Digimon pelo nome" name="search"
-                    [(ngModel)]="name" (ngModelChange)="onModelChange($event)">
+                <input clss="input-search" type="search" matInput placeholder="Procure o Digimon pelo nome..."
+                    name="search" [(ngModel)]="name" (ngModelChange)="onModelChange($event)">
             </mat-form-field>
             <br>
             <button class="btn-search">Buscar</button>
