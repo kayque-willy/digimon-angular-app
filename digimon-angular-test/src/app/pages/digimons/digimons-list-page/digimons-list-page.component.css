@@ -302,13 +302,10 @@ a:hover {
     text-align: center;
 }
 
-h3.level-title-top {
-    text-shadow: 1px 1px 1px #333;
-}
-
 .level-title-top {
-    margin-top: 11%;
-    margin-bottom: -13%;
+    text-shadow: 1px 1px 1px #333;
+    margin-top: 12%;
+    margin-bottom: -12%;
 }
 
 h3.not-found,
