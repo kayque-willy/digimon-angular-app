@@ -23,7 +23,7 @@
 
 <div class="content" role="main">
 
-    <h3 class="level-title">Ou procure por nível!</h3>
+    <h3 class="level-title-top">Ou procure por nível!</h3>
 
     <mat-button-toggle-group #group="matButtonToggleGroup" class="select-level" [value]="selectLevel"
         (change)="onLevelChange(group.value)">
@@ -49,7 +49,7 @@
             <img width="60" alt="Mega" src="../assets/level 6.png" />
         </mat-button-toggle>
     </mat-button-toggle-group>
-    <h3 class="level-title">{{group.value}}</h3>
+    <h3 class="level-title-bottom">{{group.value}}</h3>
 
     <ng-container class="container" *ngIf="dataSource.length === 0">
         <h3 class="not-found">Não foi encontrado nenhum digimon!</h3>
