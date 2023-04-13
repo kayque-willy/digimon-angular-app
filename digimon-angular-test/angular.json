@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "/digimon-test/",
+            "baseHref": "/",
             "outputPath": "dist/digimon-angular-test",
             "index": "src/index.html",
             "main": "src/main.ts",
