@@ -313,6 +313,39 @@ h3.level-title-bottom {
     text-shadow: 1px 1px 1px #333;
 }
 
+.level1,
+.level2,
+.level3,
+.level4,
+.level5,
+.level6 {
+    border-radius: 20px;
+}
+
+.level1 {
+    background-color: #50ff50;
+}
+
+.level2 {
+    background-color: #afff5e;
+}
+
+.level3 {
+    background-color: #ffff49;
+}
+
+.level4 {
+    background-color: #ffda6b;
+}
+
+.level5 {
+    background-color: #ffa74f;
+}
+
+.level6 {
+    background-color: #ff6262;
+}
+
 /* Responsive Styles */
 @media screen and (max-width: 767px) {
     .card.highlight-card span {

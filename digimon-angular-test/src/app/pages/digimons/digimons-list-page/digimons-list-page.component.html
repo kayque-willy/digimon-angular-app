@@ -60,7 +60,15 @@
         <mat-card class="card" *ngFor="let digimon of dataSource; index as i;">
             <mat-card-header>
                 <mat-card-title>{{digimon.name}}</mat-card-title>
-                <mat-card-subtitle>{{digimon.level}}</mat-card-subtitle>
+                <mat-card-subtitle [ngClass]="{ 
+                        level1: digimon.level === 'Fresh', 
+                        level2: digimon.level === 'In Training', 
+                        level3: digimon.level === 'Rookie', 
+                        level4: digimon.level === 'Champion', 
+                        level5: digimon.level === 'Ultimate', 
+                        level6: digimon.level === 'Mega'}">
+                    {{digimon.level}}
+                </mat-card-subtitle>
             </mat-card-header>
             <img class="card-img" width="175" mat-card-image src={{digimon.img}} alt={{digimon.name}}>
             <mat-card-content>
