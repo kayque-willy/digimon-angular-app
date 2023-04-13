@@ -10,21 +10,23 @@ import { MatTable } from '@angular/material/table';
 })
 export class DigimonsListPageComponent implements OnInit {
 
-  //Controle da exibição da lista
+  // Controle da exibição da lista
   begin: number = 0;
   end: number = 10;
   showBtn: boolean = true;
 
-  //Busca por nome
+  // Busca por nome
   name: string = "";
 
   // Busca por level
   selectLevel: string = "";
 
-  //Tabela de listagem
-  displayedColumns: string[] = ['img', 'name', 'level'];
+  // Listas de dados
   dataSource: Digimon[] = [];
   dataList: Digimon[] = [];
+
+  // Tabela de listagem
+  displayedColumns: string[] = ['img', 'name', 'level'];
   @ViewChild(MatTable) table: MatTable<any> | undefined;
 
   constructor(
@@ -71,6 +73,7 @@ export class DigimonsListPageComponent implements OnInit {
         this.begin = 0;
         this.end = 10;
         this.dataSource = this.dataList.slice(this.begin, this.end);
+        this.end > this.dataList.length ? this.showBtn = false : this.showBtn = true;
       });
       this.table?.renderRows();
     } catch (error) {
@@ -85,6 +88,7 @@ export class DigimonsListPageComponent implements OnInit {
         this.begin = 0;
         this.end = 10;
         this.dataSource = this.dataList.slice(this.begin, this.end);
+        this.end > this.dataList.length ? this.showBtn = false : this.showBtn = true;
       });
       this.table?.renderRows();
     } catch (error) {
@@ -102,6 +106,7 @@ export class DigimonsListPageComponent implements OnInit {
             this.begin = 0;
             this.end = 10;
             this.dataSource = this.dataList.slice(this.begin, this.end);
+            this.end > this.dataList.length ? this.showBtn = false : this.showBtn = true;
           },
           error: (err) => {
             console.log('Não foi possível encontrar o Digimon', err);
