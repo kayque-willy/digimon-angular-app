@@ -28,7 +28,6 @@
     <!-- Menu Select Level -->
     <mat-button-toggle-group #group="matButtonToggleGroup" class="select-level" [value]="selectLevel"
         (change)="onLevelChange(group.value)">
-
         <mat-button-toggle value="" aria-label="Todos">
             <img width="60" alt="Todos" src="../assets/fav.png" />
         </mat-button-toggle>
@@ -56,6 +55,7 @@
     <!-- Not found -->
     <ng-container class="container" *ngIf="dataSource.length === 0">
         <h3 class="not-found">Não foi encontrado nenhum digimon!</h3>
+        <img width="200" alt="Not Found" src="../assets/not-found.png" />
     </ng-container>
 
     <!-- Cards -->
@@ -101,7 +101,9 @@
             </mat-card-content>
         </mat-card>
     </div>
+
     <br>
+
     <!-- Tabela -->
     <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
         <ng-container matColumnDef="img">

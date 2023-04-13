@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+:host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", cursive;
+    font-size: 16px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 header {
     background: url("../../../../assets/header.jpg");
     text-align: center;
@@ -32,36 +42,6 @@ h1 {
     margin-bottom: 30px;
 }
 
-h3,
-p {
-    font-family: "Open Sans", cursive;
-    margin-bottom: 30px;
-}
-
-button {
-    border: none;
-    outline: none;
-    padding: 10px 20px;
-    border-radius: 50px;
-    color: #333;
-    background: #0095ff;
-    margin-bottom: 0;
-    box-shadow: 0 3px 20px 0 #0000003b;
-}
-button:hover {
-    cursor: pointer;
-}
-
-:host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
-        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", cursive;
-    font-size: 16px;
-    color: #333;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
 h1,
 h2,
 h3,
@@ -77,11 +57,44 @@ h2 {
 }
 
 p {
+    font-family: "Open Sans", cursive;
+    margin-bottom: 30px;
     margin: 0;
+}
+
+h3 {
+    font-family: "Open Sans", cursive;
+    margin-bottom: 1%;
 }
 
 .spacer {
     flex: 1;
+}
+
+a,
+a:visited,
+a:hover {
+    color: #1976d2;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #125699;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: #333;
+    background: #0095ff;
+    margin-bottom: 0;
+    box-shadow: 0 3px 20px 0 #0000003b;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 .toolbar {
@@ -99,21 +112,6 @@ p {
 
 .toolbar img {
     margin: 0 16px;
-}
-
-.toolbar #twitter-logo {
-    height: 40px;
-    margin: 0 8px;
-}
-
-.toolbar #youtube-logo {
-    height: 40px;
-    margin: 0 16px;
-}
-
-.toolbar #twitter-logo:hover,
-.toolbar #youtube-logo:hover {
-    opacity: 0.8;
 }
 
 .tollbar-content {
@@ -236,17 +234,6 @@ svg.material-icons:not(:last-child) {
     margin-left: 60px;
 }
 
-a,
-a:visited,
-a:hover {
-    color: #1976d2;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #125699;
-}
-
 .circle-link {
     height: 40px;
     width: 40px;
@@ -313,6 +300,10 @@ h3.level-title-bottom {
     text-shadow: 1px 1px 1px #333;
 }
 
+h3.not-found {
+    font-size: 1.8em;
+}
+
 .level1,
 .level2,
 .level3,
@@ -374,6 +365,7 @@ h3.level-title-bottom {
     animation-delay: -0.4s;
 }
 
+/* Animation */
 @keyframes animate {
     0% {
         opacity: 0;

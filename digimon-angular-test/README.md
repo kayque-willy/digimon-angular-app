@@ -1,4 +1,12 @@
-# DigimonAngularTest
+# Digimon Angular Test
+
+Aplicação web criada com Angular para consumir a API https://digimon-api.vercel.app/
+
+## Nessa aplicação é possível:
+
+- Listar todos os digimons
+- Listar os digimons por nível
+- Buscar os digimons pelo nome
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
 

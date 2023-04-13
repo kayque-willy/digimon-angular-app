@@ -49,7 +49,6 @@ export class DigimonsListPageComponent implements OnInit {
 
   public onLevelChange(val: string) {
     this.selectLevel = val;
-    console.log("Level: " + this.selectLevel);
     if (this.selectLevel === "") {
       this.getAllDigimons();
     } else {
@@ -77,6 +76,7 @@ export class DigimonsListPageComponent implements OnInit {
       });
       this.table?.renderRows();
     } catch (error) {
+      console.error(error);
       // this.snackBar.open('Erro ao buscar todos os Digimons.', 'x');
     }
   }
@@ -92,13 +92,13 @@ export class DigimonsListPageComponent implements OnInit {
       });
       this.table?.renderRows();
     } catch (error) {
+      console.error(error);
       // this.snackBar.open('Erro ao buscar todos os Digimons.', 'x');
     }
   }
 
   searchByName() {
     try {
-      //O subscribe é usado pra recuperar o resultado da requisição
       if (this.name !== "") {
         this.digimonService.getByName(this.name).subscribe({
           next: (dados) => {
@@ -112,6 +112,7 @@ export class DigimonsListPageComponent implements OnInit {
             console.log('Não foi possível encontrar o Digimon', err);
             this.dataList = [];
             this.dataSource = [];
+            this.showBtn = false;
           }
         });
         this.table?.renderRows();
@@ -119,6 +120,7 @@ export class DigimonsListPageComponent implements OnInit {
         this.getAllDigimons();
       }
     } catch (error) {
+      console.error(error);
       // this.snackBar.open('Erro ao buscar o Digimon pelo nome.', 'x');
     }
   }

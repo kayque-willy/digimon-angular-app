@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { environment } from "src/environments/environment";
 import { take } from "rxjs";
 import { throwError } from 'rxjs';
-import { catchError, finalize } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { Digimon } from 'src/app/models/digimon';
 
 
