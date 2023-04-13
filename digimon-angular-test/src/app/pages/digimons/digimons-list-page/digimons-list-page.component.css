@@ -303,9 +303,12 @@ a:hover {
 }
 
 h3.level-title-top {
-    margin-top: 12%;
-    margin-bottom: -12%;
     text-shadow: 1px 1px 1px #333;
+}
+
+.level-title-top {
+    margin-top: 11%;
+    margin-bottom: -13%;
 }
 
 h3.not-found,
@@ -344,6 +347,48 @@ h3.level-title-bottom {
 
 .level6 {
     background-color: #ff6262;
+}
+
+.arrow {
+    transform: translate(-50%, -50%);
+    padding-bottom: -8%;
+    margin-left: 2%;
+    margin-top: 14%;
+    margin-bottom: -11%;
+    padding-bottom: -3%;
+}
+
+.arrow span {
+    display: block;
+    width: 1.5vw;
+    height: 1.5vw;
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-7px, -7px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(7px, 7px);
+    }
 }
 
 /* Responsive Styles */

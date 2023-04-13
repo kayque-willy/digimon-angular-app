@@ -21,11 +21,16 @@
 </header>
 
 <div class="content" role="main">
-    <h3 class="level-title-top">Ou procure por nível!</h3>
-
+    <div class="level-title-top">
+        <h3>Ou procure por nível!</h3>
+    </div>
+    <div class="arrow">
+        <span></span>
+    </div>
     <!-- Menu Select Level -->
     <mat-button-toggle-group #group="matButtonToggleGroup" class="select-level" [value]="selectLevel"
         (change)="onLevelChange(group.value)">
+
         <mat-button-toggle value="" aria-label="Todos">
             <img width="60" alt="Todos" src="../assets/fav.png" />
         </mat-button-toggle>
