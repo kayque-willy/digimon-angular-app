@@ -13,6 +13,7 @@ export class DigimonsListPageComponent implements OnInit {
   //Controle da exibição da lista
   begin: number = 0;
   end: number = 10;
+  showBtn: boolean = true;
 
   //Busca por nome
   name: string = "";
@@ -58,6 +59,7 @@ export class DigimonsListPageComponent implements OnInit {
     this.begin += 10;
     this.end += 10;
     const moreResults: Digimon[] = this.dataList.slice(this.begin, this.end);
+    this.end > this.dataList.length ? this.showBtn = false : this.showBtn = true;
     this.dataSource.push(...moreResults);
     this.table?.renderRows();
   }
