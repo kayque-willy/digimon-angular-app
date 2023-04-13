@@ -162,16 +162,19 @@ svg.material-icons:not(:last-child) {
 }
 
 .card-span {
+    background-image: linear-gradient(to bottom right, #fdfcfb, #c3c3e2);
+    border-radius: 10px;
     font-size: 0.9rem;
     text-align: justify;
-    padding-bottom: 2%;
+    padding: 2%;
+    margin-top: 2%;
     text-shadow: 0 0 #000000c7;
 }
 
 .card {
     border-radius: 30px;
     border: 2px solid #9595954d;
-    background-color: #fafafa;
+    background-image: linear-gradient(to bottom right, #fdfcfb, #c3e1e2);
     min-width: 19%;
     max-width: 19%;
     margin: 0 8px 16px;
