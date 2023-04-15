@@ -11,8 +11,8 @@
         <form (ngSubmit)="searchByName()" class="search-form">
             <mat-form-field class="mat-form-field">
                 <span matPrefix> </span>
-                <input clss="input-search" type="search" matInput placeholder="Procure o Digimon pelo nome..."
-                    name="search" [(ngModel)]="name" (ngModelChange)="onModelChange($event)">
+                <input class="input-search" type="search" matInput placeholder="Procure o Digimon pelo nome..."
+                    name="search" [(ngModel)]="name" (ngModelChange)="onModelChange()">
             </mat-form-field>
             <br>
             <button class="btn-search">Buscar</button>
@@ -21,7 +21,7 @@
 </header>
 
 <div class="content" role="main">
-    <h3 class="level-title-top">Ou procure por nível!</h3>
+    <h3 id="anchor-title" class="level-title-top">Ou procure por nível!</h3>
     <div class="arrow">
         <span></span>
     </div>
@@ -53,7 +53,7 @@
     <h3 class="level-title-bottom">{{group.value}}</h3>
 
     <!-- Not found -->
-    <ng-container class="container" *ngIf="dataSource.length === 0">
+    <ng-container class="container" *ngIf="showNotfound">
         <h3 class="not-found">Não foi encontrado nenhum digimon!</h3>
         <img width="200" alt="Not Found" src="../assets/not-found.png" />
     </ng-container>
@@ -124,12 +124,17 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table> -->
 
+    <ng-container *ngIf="showLoad" class="container">
+        <img class="img-loading" width="150" alt="Carregando..." src="../assets/load.webp" />
+        <span class="loading">Carregando...</span>
+    </ng-container>
+
     <form *ngIf="showBtn" (ngSubmit)="getMoreResults()" class="search-form">
         <button class="btn-load">Carregar mais digimons</button>
     </form>
 
     <!-- Footer -->
-    <footer>
+    <footer id="anchor-footer">
         <div class="text-center p-3">
             © 2023 - Author:
             <a class="text-white" href="https://github.com/kayque-willy">Kayque Oliveira</a>

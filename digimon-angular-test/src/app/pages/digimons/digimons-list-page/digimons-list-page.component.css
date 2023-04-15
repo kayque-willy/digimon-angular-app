@@ -124,11 +124,6 @@ button:hover {
 
 .content {
     color: #3f51b5;
-    background-image: url("../../../../assets/bg.jpg");
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
     display: flex;
     padding: 0 16px;
     min-height: 650px;
@@ -363,6 +358,15 @@ h3.not-found {
 
 .arrow span:nth-child(3) {
     animation-delay: -0.4s;
+}
+
+.loading {
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #333;
+    margin-bottom: 1%;
 }
 
 /* Animation */
